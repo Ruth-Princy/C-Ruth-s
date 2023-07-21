@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,j;
+    scanf("%d",&n);
+    int r_min=0,c_min=0,r_max=n-1,c_max=n-1,count=1;
+    int arr[100][100];
+    while(r_min<=r_max)
+    {
+        for(i=c_min;i<=c_max;i++)
+            arr[r_min][i]=count++;
+        for(i=r_min+1;i<=r_max;i++)
+            arr[i][c_max]=count++;
+        for(i=c_max-1;i>=c_min;i--)
+            arr[r_max][i]=count++;
+        for(i=r_max-1;i>=r_min+1;i--)
+            arr[i][c_min]=count++;
+        r_min++;c_min++;r_max--;c_max--;
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
