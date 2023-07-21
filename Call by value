@@ -1,0 +1,19 @@
+#include<stdio.h>
+void rev(int a)
+{
+    int rem;
+    while(a!=0)
+    {
+        rem=a%10;
+        a=a/10;
+        printf("%d",rem);
+    }
+}
+int main()
+{
+    int a;
+    scanf("%d",&a);
+    rev(a);
+    printf("\n%d",a);
+}
+
