@@ -1,0 +1,10 @@
+#include<stdio.h>
+void main()
+{
+int num1=10, num2=5, ret;
+ret =(numl<num2) && (num2++);
+printf("%d", ret);
+printf("\n%d", num2);
+}
+
+
