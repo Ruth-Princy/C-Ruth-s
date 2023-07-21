@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,j,mid;
+    scanf("%d",&n);
+    int brr[n][n];
+    int arr[n][n];
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            scanf("%d",&arr[i][j]);
+            printf("%d",arr[i][j]);
+        }
+        printf("\n");
+    }
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            if((i==(n/2)+1)&&(j==(n/2)+1))
+             {
+               mid=arr[i][j];
+               printf("%d",mid);
+             }
+        }
+    }
+     for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+          brr[i][j]=arr[i][j]+mid;
+          printf("%d",arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
