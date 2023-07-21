@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main()
+{
+    int n,low,high,mid,i,j,search,flag;
+    scanf("%d",&n);
+    int arr[n];
+    low=0;
+    high=n-1;
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]); //10 20 30 40 50
+    }
+    scanf("%d",&search);
+    while(low<=high)
+    {
+        mid=(low+high)/2;
+        if(search==arr[mid])
+        {
+            flag=1;
+        }
+        if(search<arr[mid])
+        {
+            high=mid-1;
+        }
+        else
+        {
+            low=mid+1;
+        }
+    }
+        if(flag==1)
+        {
+            printf("Number found");
+        }
+        else
+        {
+            printf("Number not found");
+        }
+
+    return 0;
+}
