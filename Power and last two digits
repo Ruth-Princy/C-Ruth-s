@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,t,k,square=1,rem=0,rev=0,rem1=0,rev1=0;
+    scanf("%d",&n);
+    scanf("%d",&t);
+    scanf("%d",&k);
+    for(i=1;i<=t;i++)
+    {
+        square=square*n; //625
+    }
+    for(i=0;i<k;i++)
+    {
+        rem=square%10; //5 2
+        rev=rev*10+rem;
+        square=square/10; //
+    }
+    //printf("%d",rev);
+    while(rev!=0)
+    {
+        rem1=rev%10;//2 5
+        rev1=rev1*10+rem1;
+        rev=rev/10; //5
+    }
+    printf("%d",rev1);
+    return 0;
+}
