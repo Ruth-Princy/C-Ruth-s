@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+
+void Volume(int height, int width, int thickness) {
+    double pi = 3.14;
+    double radius = (double)width / (2 * pi);
+    double inner_r = radius - thickness;
+    if (inner_r < 1)
+    {
+        printf("Invalid Input");
+        return;
+    }
+    double vol=pi*pow(inner_r, 2)*height;
+    printf("%.0lf", ceil(vol));
+}
+int main()
+{
+    int h,w,t;
+    scanf("%d %d %d",&h,&w,&t);
+    Volume(h,w,t);
+}
