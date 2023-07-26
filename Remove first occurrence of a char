@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_STRINGS 100
+#define MAX_STRING_LENGTH 50
+
+int main() {
+    char strings[MAX_STRINGS][MAX_STRING_LENGTH];
+    int num_strings, i, j;
+
+    printf("Enter the number of strings: ");
+    scanf("%d", &num_strings);
+
+    printf("Enter %d strings, each on a new line:\n", num_strings);
+    for (i = 0; i < num_strings; i++) {
+        scanf("%s", strings[i]);
+    }
+
+    for (i = 0; i < num_strings; i++) {
+        for (j = i+1; j < num_strings; j++) {
+            if (strcmp(strings[i], strings[j]) == 0) {
+                for (int k = j; k < num_strings-1; k++) {
+                    strcpy(strings[k], strings[k+1]);
+                }
+                num_strings--;
+                j--;
+            }
+        }
+    }
+
+    printf("Strings without duplicates:\n");
+    for (i = 0; i < num_strings; i++) {
+        printf("%s\n", strings[i]);
+    }
+
+    return 0;
+}
