@@ -1,0 +1,41 @@
+#include<stdio.h>
+void amstrong(int a)
+    {
+        int rem=0,sum=0,s,b;
+        while(a!=0)
+        {
+        rem=a%10;
+        s=rem*rem*rem;
+        sum=sum+s;
+        a=a/10;
+        }
+        if(b==sum)
+        {
+            printf("\nNumber is amstrong");
+        }
+        else
+        {
+            printf("\nNumber is not amstrong");
+        }
+    }
+int main()
+{
+    int rem,rev=0,a,b;
+    scanf("%d",&a);
+    b=a;
+    while(a!=0)
+    {
+    rem=a%10;
+    rev=rev*10+rem;
+    a/=10;
+    }
+    if(b==rev)
+    {
+        printf("Number is palindrome");
+    }
+    else
+    {
+        printf("Number is not a palindrome");
+    }
+    amstrong(a);
+}
