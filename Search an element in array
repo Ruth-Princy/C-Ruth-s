@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,j,s,flag;
+    printf("n=");
+    scanf("%d",&n);
+    int arr[n];
+    printf("array elements=");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("search element=");
+    scanf("%d",&s);
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]==s)
+        {
+            flag=1;
+        }
+    }
+        if(flag==1)
+            printf("YES");
+        else
+            printf("NO");
+    return 0;
+}
