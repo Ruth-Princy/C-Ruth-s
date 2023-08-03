@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,k,temp,count=0,kindex;
+    printf("n=");
+    scanf("%d",&n);
+    printf("k=");
+    scanf("%d",&k);
+    int arr[n];
+    printf("array elements=");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]==k)
+        {
+            kindex=i;
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]<k)
+        {
+            arr[kindex-1]=arr[kindex-1]+arr[i];
+            arr[i]=arr[kindex-1]-arr[i];
+            arr[kindex-1]=arr[kindex-1]-arr[i];
+            count++;
+        }
+    }
+        printf("%d",count);
+        return 0;
+}
